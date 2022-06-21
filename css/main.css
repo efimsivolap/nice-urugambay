@@ -21,7 +21,7 @@
     font-weight: 100;
 }
 body {
-    background-color: black;
+    background-color: rgb(238, 174, 174);
     color: white;
     font-size: calc(var(--index) * .8);
     font-family: releway_c, sans-serif;
