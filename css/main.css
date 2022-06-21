@@ -7,26 +7,24 @@
     --index: calc(1vw + 1vh);
     --gutter: 30px;
     --side-small: 26;
-    --side-bigger: 36;
+    --side-big: 36;
     --depth: 4000px;
+    --transition: .75s cubic-bezier(.075, .5, 0, 1)
 }
 @font-face {
     font-family: raleway_c;
-    src: url(../fonts/raleway-v22-cyrillic-300.woff2);
-    font-weight: 300;
+    src: url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300&display=swap');
+    font-weight: 500;
 }
-@font-face {
-    font-family: raleway_c;
-    src: url(../fonts/raleway-v22-cyrillic-100.woff2);
-    font-weight: 100;
-}
+
 body {
-    background-color: rgb(238, 174, 174);
+    background-color: rgb(0, 0, 0);
     color: white;
     font-size: calc(var(--index) * .8);
     font-family: releway_c, sans-serif;
     line-height: 1.75;
     height: var(--depth);
+    font-weight: 300;
 }
 .container {
     width: 100%;
@@ -45,4 +43,35 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: var(--transition), opacity .75s ease;
+    will-change: transform;
+    transform-style: preserve-3d;
+    }
+
+    h1, h2, h3, h4 {
+        font-weight: 100;
+        text-transform: uppercase;
+    }
+    .frame h2 {
+        text-align: center;
+        font-size: calc(var(--index) * 3.3);
+    }
+
+    .frame-media {
+        position: relative;
+        width: calc(var(--index) * var(--side-small));
+        height: calc(var(--index) * var(--side-big));
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .frame-media_left {
+        right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+    }
+
+    .frame-media_right {
+        left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+    }
+    .frame_bg {
+        background-color: rgb(0, 0, 0 / .8);
     }
